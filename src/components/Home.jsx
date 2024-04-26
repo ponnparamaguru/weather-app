@@ -19,7 +19,7 @@ const Home = () => {
         async function fetchData() {
             try {
                 const res = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${search}&appid=7f58aba2dbb1d43e654ac5471563a66d
-&units=metric`);
+                &units=metric`);
                 if (!res.ok) {
                     throw new Error('Failed to fetch weather data');
                 }
@@ -57,7 +57,7 @@ const Home = () => {
   return (
     <div>
         <div className='bg-sky-500 h-screen w-full flex justify-center items-center'>
-            <div className='md:h-5/6 md:w-4/12 h-3/6 w-10/12 bg-sky-400 rounded-3xl drop-shadow-2xl relative'>
+            <div className='md:h-5/6 md:w-4/12 h-4/6 w-10/12 bg-sky-400 rounded-3xl drop-shadow-2xl relative'>
                 <div className='relative flex items-center p-10'>
                     <IoSearch className='w-5 h-5 ml-3 absolute text-white' />
                         <input
@@ -75,17 +75,17 @@ const Home = () => {
                         <img className='md:w-36 w-28' src={icon} alt=""></img>
                     </div>
                     <h1 className='md:text-3xl text-2xl font-bold text-white' >{city?.name}</h1>
-                    <h1 className='md:text-6xl text-4xl font-bold text-white' >{city?.main?.temp}</h1>
-                    <div className='grid grid-cols-2 justify-center text-white p-5 text-xl font-bold'>
+                    <h1 className='md:text-6xl text-5xl font-bold text-white' >{city?.main?.temp}</h1>
+                    <div className='grid grid-cols-2 justify-center text-white px-5 md:py-5 py-20 text-xl font-bold'>
                         <div className='flex flex-col items-center'>
-                            <p className='mb-1 text-xl md:text-2xl'>Humidity</p>
+                            <p className='mb-2 text-xl md:text-2xl'>Humidity</p>
                             <div className='flex items-center'>
                                 <img className='w-6 h-6' src={humidity} alt=""/>
                                 <p className='md:text-3xl text-2xl ml-2'>{city?.main?.humidity}</p>
                             </div>
                         </div>
                         <div className='flex flex-col items-center'>
-                            <p className='mb-1 text-xl md:text-2xl'>Wind speed</p>
+                            <p className='mb-2 text-xl md:text-2xl'>Wind speed</p>
                             <div className='flex items-center'>
                                 <img className='w-6 h-6' src={wind} alt=""/>
                                 <p className='md:text-3xl text-2xl ml-2'>{Math.floor(city?.wind?.speed)}</p>
